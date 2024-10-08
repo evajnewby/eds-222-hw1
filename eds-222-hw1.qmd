@@ -157,7 +157,7 @@ ggplot() +
              size = 2) +
   xlab('Longitude') + 
   ylab('Latitude') + 
-  ggtitle("Monitor Locations") +
+  ggtitle("Air Pollution Monitor Locations") +
   scale_colour_manual("", 
                       values = c("Crowdsourced"="purple", "Government"="orange"))
 ```
