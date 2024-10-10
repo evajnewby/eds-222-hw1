@@ -2,6 +2,7 @@
 title: "EDS 222: Homework 1"
 date: "Assigned October 1, due October 18, 5 pm"
 author: "Eva Newby"
+format: html
 editor_options: 
   chunk_output_type: console
 ---
@@ -145,23 +146,20 @@ Use the location of the air pollution stations for both of the sampling strategi
 `longitude` indicates location in the *x*-direction, while `latitude` indicates location in the *y*-direction. With `ggplot2` this should be nothing fancy. We'll do more spatial data in `R` later in the course.
 :::
 
-```{r}
+```{r, eval = TRUE}
 ggplot() +
-  geom_point(data = crowdsourced, 
+  geom_point(data = crowdsourced,
              aes(x = longitude, y = latitude, 
-                 color = 'Crowdsourced'), 
-             size = 2) +
+                 color = 'Crowdsourced')) +
   geom_point(data = govt, 
-             aes(x = longitude, y = latitude, 
-                 color = 'Government'), 
-             size = 2) +
+             aes(x = longitude, 
+                 y = latitude, 
+                 color = 'Government')) +
   xlab('Longitude') + 
   ylab('Latitude') + 
   ggtitle("Air Pollution Monitor Locations") +
-  scale_colour_manual("", 
-                      values = c("Crowdsourced"="purple", "Government"="orange"))
+  scale_colour_manual("", values = c("Crowdsourced"="purple", "Government"="orange"))
 ```
-
 
 
 ### Question 5
